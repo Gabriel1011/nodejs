@@ -1,0 +1,31 @@
+{
+  "name": "02-api-solid",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsup src --out-dir build",
+    "start": "node build/server.js",
+    "lint": "eslint src --ext .ts",
+    "prisma:gen": "npx prisma generate",
+    "prisma:migrate": "npx prisma migrate dev"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@rocketseat/eslint-config": "2.2.2",
+    "@types/node": "22.0.0",
+    "eslint": "8.57.0",
+    "prisma": "5.17.0",
+    "tsup": "8.2.3",
+    "tsx": "4.16.2",
+    "typescript": "5.5.4"
+  },
+  "dependencies": {
+    "@prisma/client": "5.17.0",
+    "dotenv": "16.4.5",
+    "fastify": "4.28.1",
+    "zod": "3.23.8"
+  }
+}
