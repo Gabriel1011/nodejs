@@ -1,7 +1,7 @@
 import { test, expect, beforeEach, describe } from 'vitest'
 import { compare } from 'bcryptjs'
 import { InMemoryUserRepository } from '@/repositories/in-memory/in-memory-user-repository'
-import { RegisterUserService } from './register-user copy'
+import { RegisterUserService } from '../register-user copy'
 
 let registUserService: RegisterUserService
 
