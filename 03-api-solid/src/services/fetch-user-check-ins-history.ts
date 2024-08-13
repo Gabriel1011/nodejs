@@ -22,6 +22,8 @@ export class FetchUserCheckInsHistoryService {
       page,
     )
 
+    console.log(checkIns)
+
     return {
       checkIns,
     }

@@ -22,7 +22,7 @@ export class AuthenticateService {
     const user = await this.usersRepository.findByEmail(email)
 
     if (!user) {
-      throw new InvalidCredentialsError()
+      throw new Error('User Not Exists')
     }
 
     const doesPasswordMatches = await compare(password, user.password_hash)
