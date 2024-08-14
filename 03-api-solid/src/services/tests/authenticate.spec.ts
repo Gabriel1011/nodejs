@@ -32,7 +32,7 @@ describe('Register user', () => {
     await expect(() =>
       sut.execute({
         email: 'johndoe@example.com',
-        password: '123456',
+        password: '321321',
       }),
     ).rejects.toBeInstanceOf(InvalidCredentialsError)
   })
