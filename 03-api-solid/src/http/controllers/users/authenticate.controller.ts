@@ -18,22 +18,13 @@ export async function authenticate(
     const { user } = await makeAuthenticateService().execute(userData)
 
     const token = await reply.jwtSign(
-      {},
-      {
-        sign: {
-          sub: user.id,
-        },
-      },
+      { role: user.role },
+      { sign: { sub: user.id } },
     )
 
     const refreshToken = await reply.jwtSign(
-      {},
-      {
-        sign: {
-          sub: user.id,
-          expiresIn: '7d',
-        },
-      },
+      { role: user.role },
+      { sign: { sub: user.id, expiresIn: '7d' } },
     )
 
     return reply
