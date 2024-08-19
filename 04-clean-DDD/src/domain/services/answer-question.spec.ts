@@ -1,12 +1,11 @@
-import { test, expect } from "vitest"
-import { AnswerQuestionService } from "./answer-question"
-import { AnswersRepository } from "../repositories/answers-repository"
-import { Answer } from "../entities/answer"
+import { AnswerQuestionService } from './answer-question'
+import { AnswersRepository } from '../repositories/answers-repository'
+import { Answer } from '../entities/answer'
 
 const fakeAnswersRepository: AnswersRepository = {
   create: async (answer: Answer) => {
-    return
-  }
+    answer.content = answer.content + 'teste'
+  },
 }
 
 test('create an answer', async () => {
@@ -15,7 +14,7 @@ test('create an answer', async () => {
   const answer = await answerQuestionService.execute({
     instructorId: '1',
     questionId: '1',
-    content: 'Nova resposta'
+    content: 'Nova resposta',
   })
 
   expect(answer.content).toEqual('Nova resposta')
