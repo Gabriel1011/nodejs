@@ -8,7 +8,7 @@ datasource db {
 }
 
 model User {
-  id        Int        @id @default(autoincrement())
+  id        String     @id @default(uuid())
   name      String
   email     String     @unique
   password  String
@@ -18,12 +18,12 @@ model User {
 }
 
 model Question {
-  id        Int       @id @default(autoincrement())
+  id        String    @id @default(uuid())
   title     String
   slug      String    @unique
   createdAt DateTime  @default(now()) @map("created_at")
   updatedAt DateTime? @updatedAt @map("updated_at")
-  authorId  Int       @map("author_id")
+  authorId  String    @map("author_id")
 
   author User @relation(fields: [authorId], references: [id])
 
