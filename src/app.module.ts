@@ -25,4 +25,4 @@ import { FetchRecentQuestionsController } from './controllers/fetch-recent-quest
   ],
   providers: [PrismaService],
 })
-export class AppModule { }
+export class AppModule {}
